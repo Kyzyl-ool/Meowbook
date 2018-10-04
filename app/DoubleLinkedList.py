@@ -10,9 +10,6 @@ class Node():
 	def __init__(self, value):
 		self.data = value
 
-	def __str__(self):
-		return str(self.data)
-
 	def get_prev(self):
 		'''Returns previous node.'''
 		return self.prev
@@ -31,12 +28,14 @@ class DoubleLinkedList():
 
 	def __insert_after_node(self, current, element):
 		'''Inserts given node (element) before  'current' node.'''
-		if current == 0:
-			if (self.tail == 0):
-				self.head = element
-				self.tail = self.head
-			else:
-				print('__insert_after_node: Null index.')
+		if current == 0 and self.head != 0:
+			element.next = self.head
+			self.head.prev = element
+			self.head = element
+			return
+		if self.tail == 0:
+			self.head = element
+			self.tail = element
 		else:
 			if current.next != 0:
 				element.next = current.next
@@ -47,6 +46,7 @@ class DoubleLinkedList():
 				element.next = 0
 				element.prev = current
 				current.next = element
+				self.tail = element
 
 	def __str__(self):
 		'''Printing DoubleLinkedList.'''
@@ -60,7 +60,7 @@ class DoubleLinkedList():
 		return result
 
 	def __remove_by_node(self, node):
-		'''Removes given node'''
+		'''Removes given node.'''
 		if node.next == 0 and node.prev == 0:
 			del node
 			self.head = 0
@@ -95,7 +95,7 @@ class DoubleLinkedList():
 		self.__insert_after_node(i, tmp_node)
 
 	def push(self, value):
-		'''adds new element to the end.'''
+		'''pushs new element to the end.'''
 		tmp = Node(value)
 		self.__insert_after_node(self.tail, tmp)
 
@@ -103,14 +103,11 @@ class DoubleLinkedList():
 		'''Returns data from node by index.'''
 		return self.__get_node(index).data
 
-	def pop(self, index):
-		'''Removes node by index and returned it.'''
-		i = self.head
-		for _ in range(index):
-			i = i.next
-		result = i.data
-		self.__remove_by_node(i)
-		return result
+	def pop(self):
+		'''Removes node in the end and returns is.'''
+		tmp = self.tail.data
+		self.__remove_by_node(self.tail)
+		return tmp
 
 	def dump(self):
 		'''Prints list's dump.'''
@@ -123,13 +120,13 @@ class DoubleLinkedList():
 			i = i.next
 
 	def unshift(self, value):
-		'''Adds new element to the beggining of the list.'''
+		'''pushs new element to the beggining of the list.'''
 		tmp = Node(value)
-		self.__insert_after_node(self.head, tmp)
+		self.__insert_after_node(0, tmp)
 
 	def shift(self):
 		'''Removes element from the beginning.'''
-		__remove_by_node(self.head)
+		self.__remove_by_node(self.head)
 
 	def len(self):
 		'''Returns length of the list.'''
@@ -145,12 +142,19 @@ class DoubleLinkedList():
 		'''Removes element from the list.'''
 		self.__remove_by_node(elem)
 
-	def contains(self, elem):
+	def contains_element(self, elem):
 		'''Checks if element is in list.'''
 		i = self.head
 		while i != elem:
 			i.next
 		return True if i == elem else False
+
+	def contains(self, value):
+		'''Checks if value is exist in list'''
+		i = self.head
+		while i != 0 and i.data != value:
+			i = i.next
+		return True if i != 0 and i.data == value else False
 
 	def first(self):
 		'''Returns first element.'''
@@ -159,3 +163,12 @@ class DoubleLinkedList():
 	def last(self):
 		'''Returns last element.'''
 		return self.tail
+
+	def delete_by_index(self, index):
+		'''Deletes element by index and returns it.'''
+		i = self.head
+		for _ in range(index):
+			i = i.next
+		tmp = i.data
+		self.__remove_by_node(i)
+		return tmp
