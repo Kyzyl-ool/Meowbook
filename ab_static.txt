@@ -1,0 +1,42 @@
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking meowbook.org (be patient)
+
+
+Server Software:        nginx/1.15.2
+Server Hostname:        meowbook.org
+Server Port:            80
+
+Document Path:          /
+Document Length:        13 bytes
+
+Concurrency Level:      16
+Time taken for tests:   0.755 seconds
+Complete requests:      5000
+Failed requests:        0
+Total transferred:      1215000 bytes
+HTML transferred:       65000 bytes
+Requests per second:    6619.44 [#/sec] (mean)
+Time per request:       2.417 [ms] (mean)
+Time per request:       0.151 [ms] (mean, across all concurrent requests)
+Transfer rate:          1570.82 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   2.6      0     181
+Processing:     0    2   9.8      2     181
+Waiting:        0    2   9.8      2     181
+Total:          1    2  10.1      2     181
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      2
+  80%      2
+  90%      2
+  95%      3
+  98%      4
+  99%      4
+ 100%    181 (longest request)
