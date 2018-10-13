@@ -106,6 +106,14 @@ class TestDoubleLinkedList(unittest.TestCase):
 				self.assertEqual(i.prev, 0)
 				self.assertEqual(i.next, 0)
 
+	def test_delete_by_value(self):
+		a = DoubleLinkedList()
+		a.push(2)
+		a.push(3)
+		a.delete_by_value(2)
+		self.assertEqual(a.get(0), 3)
+
+
 
 if __name__ == '__main__':
 	unittest.main()

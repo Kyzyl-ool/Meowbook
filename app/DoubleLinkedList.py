@@ -10,6 +10,9 @@ class Node():
 	def __init__(self, value):
 		self.data = value
 
+	def __str__(self):
+		return self.data
+
 	def get_prev(self):
 		'''Returns previous node.'''
 		return self.prev
@@ -172,3 +175,12 @@ class DoubleLinkedList():
 		tmp = i.data
 		self.__remove_by_node(i)
 		return tmp
+
+	def delete_by_value(self, value):
+		'''Deletes by value'''
+		i = self.head
+		while (i != 0 and i.data != value):
+			i = i.next
+
+		if (i != 0):
+			self.__remove_by_node(i)
