@@ -5,3 +5,5 @@ venv/
 *.swp
 .DS_Store
 .idea/
+frontend/
+instance/config.py
