@@ -1,5 +1,9 @@
 from flask import request, abort, jsonify
 from app import app
+from .model import *
+
+
+
 
 CHATS_LIST = ['Meow', 'Gaw', 'Gavgav', 'Muu']
 CONTACTS_LIST = ['Cat', 'Dog', 'Mouse', 'Kitty', 'Cow', 'Bird']
@@ -52,3 +56,8 @@ def create_new_chat():
 	else:
 		CHATS_LIST.append(request.form['chat_name'])
 		return jsonify(request.form)
+
+@app.route('/users/')
+def users():
+	one_user = get_user()
+	return jsonify(one_user)
