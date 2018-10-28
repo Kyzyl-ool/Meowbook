@@ -59,5 +59,9 @@ def create_new_chat():
 
 @app.route('/users/')
 def users():
-	users_list = get_users_list_by_mask('asd')
-	return jsonify(list(map(dict, users_list))[0])
+	users_list = get_users_list_by_mask(r'root')
+	responses = list(map(dict, users_list))
+	if (len(responses) > 0):
+		return jsonify(responses[0])
+	else:
+		return jsonify({})
