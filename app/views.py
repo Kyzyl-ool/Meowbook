@@ -5,8 +5,8 @@ from .model import *
 
 
 
-CHATS_LIST = ['Meow', 'Gaw', 'Gavgav', 'Muu']
-CONTACTS_LIST = ['Cat', 'Dog', 'Mouse', 'Kitty', 'Cow', 'Bird']
+# CHATS_LIST = ['Meow', 'Gaw', 'Gavgav', 'Muu']
+# CONTACTS_LIST = ['Cat', 'Dog', 'Mouse', 'Kitty', 'Cow', 'Bird']
 
 
 @app.route('/<string:name>/')
@@ -28,13 +28,13 @@ def form():
 		rv = jsonify(request.form)
 		return rv
 
-@app.route('/chats/', methods = ['GET'])
-def get_chats_list():
-	result = {}
-	result['status_code'] = '200 OK'
-	result['mimetype'] = 'application/json'
-	result['chats'] = CHATS_LIST
-	return jsonify(result)
+# @app.route('/chats/', methods = ['GET'])
+# def get_chats_list():
+# 	result = {}
+# 	result['status_code'] = '200 OK'
+# 	result['mimetype'] = 'application/json'
+# 	result['chats'] = CHATS_LIST
+# 	return jsonify(result)
 
 @app.route('/contacts/', methods = ['GET'])
 def get_contacts_list():
@@ -59,9 +59,8 @@ def create_new_chat():
 
 @app.route('/users/')
 def users():
-	users_list = get_users_list_by_mask(r'root')
-	responses = list(map(dict, users_list))
-	if (len(responses) > 0):
-		return jsonify(responses[0])
-	else:
-		return jsonify({})
+	return jsonify(get_users_list_by_mask(r'%'))
+
+@app.route('/chats/')
+def chats():
+	return jsonify(get_chats_list())
