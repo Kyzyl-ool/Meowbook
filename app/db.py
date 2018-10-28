@@ -15,3 +15,7 @@ def query_one(sql, **params):
         cur.execute(sql, params)
         return dict(cur.fetchone())
 
+def query_all(sql, **params):
+    with get_cursor() as cur:
+        cur.execute(sql, params)
+        return cur.fetchall()
