@@ -25,4 +25,3 @@ def add_new_chat(chat_id, is_group_chat, topic, last_message):
 	topic=str(topic),
 	last_message = int(last_message))
 	commit()
-	rollback()
