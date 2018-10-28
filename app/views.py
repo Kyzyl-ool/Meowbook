@@ -50,17 +50,32 @@ def create_new_chat():
 	if request.method == 'GET':
 		return """<html><head></head><body>
 		<form method = "POST" action = "/new_chat/">
-			<input name = "chat_name">
-			<input type = "submit">
+			<input name = "chat_topic">
+			<p><input name = "is_group_chat" type="checkbox" value = "True">Групповой чат</p>
+			<input type = "submit" placeholder="Имя чата">
 		</form></body></html>"""
 	else:
-		CHATS_LIST.append(request.form['chat_name'])
-		return jsonify(request.form)
+		# print(request.form['is_group_chat'])
+		# add_new_chat(1, request.form['is_group_chat'], request.form['chat_topic'], 0)
+		# CHATS_LIST.append(request.form['chat_name'])
+		request_form_data = dict(request.form)
+		request_form_data['chat_topic'] = request_form_data['chat_topic'][0]
+
+		if 'is_group_chat' not in request_form_data:
+			request_form_data['is_group_chat'] = False
+		else:
+			request_form_data['is_group_chat'] = True
+
+		add_new_chat(1, request_form_data['is_group_chat'], request_form_data['chat_topic'], 0)
+
+		return jsonify(request_form_data)
 
 @app.route('/users/')
 def users():
-	return jsonify(get_users_list_by_mask(r'%'))
+	mask = request.args.get('mask')
+	if mask == None: mask = '%'
+	return jsonify(get_users_list_by_mask(mask))
 
-@app.route('/chats/')
+@app.route('/chats_list/')
 def chats():
 	return jsonify(get_chats_list())

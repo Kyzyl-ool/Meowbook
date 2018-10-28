@@ -20,3 +20,26 @@ def query_all(sql, **params):
         cur.execute(sql, params)
         result = cur.fetchall()
         return {i:  dict(result[i]) for i in range(len(result))}
+
+def execute(sql, **params):
+    with get_cursor() as cur:
+        cur.execute(sql, params)
+
+def commit():
+    if hasattr(flask.g, 'dbconn'):
+        conn = flask.g.dbconn
+        conn.commit()
+        close()
+
+
+def rollback():
+    if hasattr(flask.g, 'dbconn'):
+        conn = flask.g.dbconn
+        conn.rollback()
+        close()
+
+def close():
+    if hasattr(flask.g, 'dbconn'):
+        conn = flask.g.dbconn
+        conn.close()
+        delattr(flask.g, 'dbconn')
