@@ -10,3 +10,8 @@ def get_users_list_by_mask(mask):
         SELECT * FROM "User"
         WHERE "name" LIKE %(mask)s;
     """, mask = str(mask))
+
+def get_chats_list():
+	return query_all("""
+		SELECT * FROM "Chat";
+	""")
