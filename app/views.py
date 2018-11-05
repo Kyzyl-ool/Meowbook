@@ -1,4 +1,4 @@
-from flask import request, abort, jsonify, Response
+from flask import request, abort, jsonify
 from app import app
 from .model import *
 
@@ -36,6 +36,14 @@ def form():
 # 	result['chats'] = CHATS_LIST
 # 	return jsonify(result)
 
+@app.route('/contacts/', methods = ['GET'])
+def get_contacts_list():
+	result = {}
+	result['status_code'] = '200 OK'
+	result['mimetype'] = 'application/json'
+	result['contacts'] = CONTACTS_LIST
+	return jsonify(result)
+
 
 @app.route('/new_chat/', methods = ['GET', 'POST'])
 def create_new_chat():
@@ -58,7 +66,7 @@ def create_new_chat():
 		else:
 			request_form_data['is_group_chat'] = True
 
-		add_new_chat(request_form_data['is_group_chat'], request_form_data['chat_topic'], 0)
+		add_new_chat(1, request_form_data['is_group_chat'], request_form_data['chat_topic'], 0)
 
 		return jsonify(request_form_data)
 
