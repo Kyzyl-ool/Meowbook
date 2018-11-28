@@ -1,81 +1,95 @@
-from flask import request, abort, jsonify
-from app import app
+from flask import request, abort, jsonify, redirect
+from app import app, jsonrpc
 from .model import *
+import json
+import time
+import requests
+
+from datetime import timedelta
+from flask import make_response, request, current_app
+from functools import update_wrapper
 
 
+def isNone(var):
+	return var is None
 
+def isString(var):
+	return isinstance(var, str)
 
-# CHATS_LIST = ['Meow', 'Gaw', 'Gavgav', 'Muu']
-# CONTACTS_LIST = ['Cat', 'Dog', 'Mouse', 'Kitty', 'Cow', 'Bird']
+def isInt(var):
+	return isinstance(var, int)
 
+def isBool(var):
+	return isinstance(var, bool)
 
-@app.route('/<string:name>/')
-@app.route('/')
-def index(name = "World"):
-	return "Hello, {}!".format(name)
+# def checkAccessToken(access_token):
+# 	user_id = 210700286
+# 	user_data_url = 'https://api.vk.com/method/users.get?user_ids={}&access_token={}&v=5.92'.format(user_id, access_token)
+# 	resp = requests.get(user_data_url)
+# 	print(resp.text)
 
-
-@app.route('/form/', methods = ['POST', 'GET'])
-def form():
-	if request.method == 'GET':
-		return """<html><head></head><body>
-		<form method = "POST" action = "/form/">
-			<input name = "first_name">
-			<input name = "last_name">
-			<input type = "submit">
-		</form></body></html>"""
+@jsonrpc.method('new_chat')
+def new_chat(topic, is_group):
+	if (
+		not isNone(topic) and not isNone(is_group) and
+		isString(topic) and isBool(is_group)
+		):
+		add_new_chat(is_group, topic, 0)
+		return {'code': 200}
 	else:
-		rv = jsonify(request.form)
-		return rv
-
-# @app.route('/chats/', methods = ['GET'])
-# def get_chats_list():
-# 	result = {}
-# 	result['status_code'] = '200 OK'
-# 	result['mimetype'] = 'application/json'
-# 	result['chats'] = CHATS_LIST
-# 	return jsonify(result)
-
-@app.route('/contacts/', methods = ['GET'])
-def get_contacts_list():
-	result = {}
-	result['status_code'] = '200 OK'
-	result['mimetype'] = 'application/json'
-	result['contacts'] = CONTACTS_LIST
-	return jsonify(result)
+		return {'code': 400}
 
 
-@app.route('/new_chat/', methods = ['GET', 'POST'])
-def create_new_chat():
-	if request.method == 'GET':
-		return """<html><head></head><body>
-		<form method = "POST" action = "/new_chat/">
-			<input name = "chat_topic">
-			<p><input name = "is_group_chat" type="checkbox" value = "True">Групповой чат</p>
-			<input type = "submit" placeholder="Имя чата">
-		</form></body></html>"""
+@jsonrpc.method('new_message')
+def new_message(chat_id, user_id, content):
+	if (
+		not isNone(chat_id) and not isNone(user_id) and not isNone(content) and
+		isInt(chat_id) and isInt(user_id) and isString(content)
+		):
+		add_new_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'))
+		return {'code': 200}
 	else:
-		# print(request.form['is_group_chat'])
-		# add_new_chat(1, request.form['is_group_chat'], request.form['chat_topic'], 0)
-		# CHATS_LIST.append(request.form['chat_name'])
-		request_form_data = dict(request.form)
-		request_form_data['chat_topic'] = request_form_data['chat_topic'][0]
+		return {'code': 400}
 
-		if 'is_group_chat' not in request_form_data:
-			request_form_data['is_group_chat'] = False
-		else:
-			request_form_data['is_group_chat'] = True
+@jsonrpc.method('get_users')
+def get_users(mask):
+	if (not isNone(mask) and isString(mask)):
+		return jsonify(get_users_list_by_mask(mask)).json
+	else:
+		return {'code': 400}
 
-		add_new_chat(1, request_form_data['is_group_chat'], request_form_data['chat_topic'], 0)
+@jsonrpc.method('get_chats')
+def get_chats(user_id):
+	print('user id: ',user_id)
+	return jsonify(get_members_list(user_id)).json
 
-		return jsonify(request_form_data)
+@jsonrpc.method('get_messages')
+def get_message(chat_id, user_id):
+	if (not isNone(chat_id) and not isNone(user_id) and
+		isInt(chat_id) and isInt(user_id)
+		):
+		return jsonify(get_messages(chat_id, user_id)).json
+	else:
+		return {'code': 400}
 
-@app.route('/users/')
-def users():
-	mask = request.args.get('mask')
-	if mask == None: mask = '%'
-	return jsonify(get_users_list_by_mask(mask))
+@app.route('/get_first_token/')
+def get_first_token():
+	return redirect('https://oauth.vk.com/authorize?client_id=6763334&redirect_uri=http://127.0.0.1:3000/authpage/&v=5.92&display=page&response_type=code&scope=1')
 
-@app.route('/chats_list/')
-def chats():
-	return jsonify(get_chats_list())
+
+@jsonrpc.method('get_access_token')
+def auth(code):
+	print(code)
+	access_token_url = 'https://oauth.vk.com/access_token?client_id=6763334&client_secret=UkX5Gbkg2pJdK9PfHunI&redirect_uri=http://127.0.0.1:3000/authpage/&code={}'.format(code)
+	resp = requests.get(access_token_url)
+	print(resp.text)
+	return resp.text
+	# json_data = json.loads(resp.text)
+	# return json_data
+
+@jsonrpc.method('get_user_data')
+def get_user_data(access_token, user_id):
+	user_data_url = 'https://api.vk.com/method/users.get?user_ids={}&access_token={}&v=5.92'.format(user_id, access_token)
+	resp = requests.get(user_data_url)
+	return resp.text
+
