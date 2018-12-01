@@ -5,10 +5,19 @@ import json
 import time
 import requests
 import base64
+import boto3
+import config
 
 from datetime import timedelta
 from flask import make_response, request, current_app
 from functools import update_wrapper
+
+boto3_session = boto3.session.Session()
+s3_client = boto3_session.client(
+	service_name='s3',
+	endpoint_url='http://hb.bizmrg.com',
+	aws_access_key_id=config.AWS_ACCESS_KEY_ID,
+	aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY)
 
 
 def isNone(var):
@@ -22,12 +31,6 @@ def isInt(var):
 
 def isBool(var):
 	return isinstance(var, bool)
-
-# def checkAccessToken(access_token):
-# 	user_id = 210700286
-# 	user_data_url = 'https://api.vk.com/method/users.get?user_ids={}&access_token={}&v=5.92'.format(user_id, access_token)
-# 	resp = requests.get(user_data_url)
-# 	print(resp.text)
 
 @jsonrpc.method('new_chat')
 def new_chat(topic, is_group):
@@ -96,4 +99,7 @@ def get_user_data(access_token, user_id):
 
 @jsonrpc.method('upload_file')
 def upload_file(base64content, filename):
-	return base64content
+	if (s3_client.put_object(Bucket='2018-kezhik-kyzyl_ool-bucket', Key=filename, Body=base64content)):
+		return {'code': 200}
+	else:
+		return {'code': 500, 'error': 'Error with s3 client.'}
