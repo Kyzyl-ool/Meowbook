@@ -1,23 +1,20 @@
 from flask import request, abort, jsonify, redirect
-from app import app, jsonrpc
+from app import app, jsonrpc, s3_client, cent_client
 from .model import *
 import json
 import time
 import requests
 import base64
-import boto3
+import jwt
 import config
 
 from datetime import timedelta
 from flask import make_response, request, current_app
 from functools import update_wrapper
 
-boto3_session = boto3.session.Session()
-s3_client = boto3_session.client(
-	service_name='s3',
-	endpoint_url='http://hb.bizmrg.com',
-	aws_access_key_id=config.AWS_ACCESS_KEY_ID,
-	aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY)
+
+
+
 
 
 def isNone(var):
@@ -46,6 +43,11 @@ def new_chat(topic, is_group):
 
 @jsonrpc.method('new_message')
 def new_message(chat_id, user_id, content):
+	# publish data into channel
+	channel = "chat1"
+	data = {"text": content}
+	cent_client.publish(channel, data)
+
 	if (
 		not isNone(chat_id) and not isNone(user_id) and not isNone(content) and
 		isInt(chat_id) and isInt(user_id) and isString(content)
@@ -100,7 +102,7 @@ def get_user_data(access_token, user_id):
 @jsonrpc.method('upload_file')
 def upload_file(base64content, filename):
 	if (s3_client.put_object(
-								Bucket='2018-kezhik-kyzyl_ool-bucket',
+								Bucket=config.BUCKET_NAME,
 								Key=filename,
 								Body=base64.b64decode(base64content) )):
 		return {'code': 200}
@@ -109,4 +111,9 @@ def upload_file(base64content, filename):
 
 @jsonrpc.method('download_file')
 def download_file(filename):
-	return s3_client.get_object(Bucket='2018-kezhik-kyzyl_ool-bucket', Key=filename).get('Body').read().decode('utf-8')
+	return s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename).get('Body').read().decode('utf-8')
+
+
+@jsonrpc.method('get_centrifuge_token')
+def get_centrifuge_token():
+	return jwt.encode({"sub": ""}, config.CENTRIFUGO_SECRET).decode()
