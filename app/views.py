@@ -106,3 +106,7 @@ def upload_file(base64content, filename):
 		return {'code': 200}
 	else:
 		return {'code': 500, 'error': 'Error with s3 client.'}
+
+@jsonrpc.method('download_file')
+def download_file(filename):
+	return s3_client.get_object(Bucket='2018-kezhik-kyzyl_ool-bucket', Key=filename).get('Body').read().decode('utf-8')
