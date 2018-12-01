@@ -102,7 +102,7 @@ def upload_file(base64content, filename):
 	if (s3_client.put_object(
 								Bucket='2018-kezhik-kyzyl_ool-bucket',
 								Key=filename,
-								Body=base64.b64decode(base64content).decode('utf-8') )):
+								Body=base64.b64decode(base64content) )):
 		return {'code': 200}
 	else:
 		return {'code': 500, 'error': 'Error with s3 client.'}
