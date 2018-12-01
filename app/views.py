@@ -4,6 +4,7 @@ from .model import *
 import json
 import time
 import requests
+import base64
 
 from datetime import timedelta
 from flask import make_response, request, current_app
@@ -93,3 +94,6 @@ def get_user_data(access_token, user_id):
 	resp = requests.get(user_data_url)
 	return resp.text
 
+@jsonrpc.method('upload_file')
+def upload_file(base64content, filename):
+	return base64content
