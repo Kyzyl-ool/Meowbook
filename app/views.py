@@ -99,7 +99,10 @@ def get_user_data(access_token, user_id):
 
 @jsonrpc.method('upload_file')
 def upload_file(base64content, filename):
-	if (s3_client.put_object(Bucket='2018-kezhik-kyzyl_ool-bucket', Key=filename, Body=base64content)):
+	if (s3_client.put_object(
+								Bucket='2018-kezhik-kyzyl_ool-bucket',
+								Key=filename,
+								Body=base64.b64decode(base64content).decode('utf-8') )):
 		return {'code': 200}
 	else:
 		return {'code': 500, 'error': 'Error with s3 client.'}
