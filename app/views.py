@@ -20,10 +20,9 @@ from functools import update_wrapper
 def new_chat(topic, is_group):
     if (
             not isNone(topic) and not isNone(is_group) and
-            isString(topic) and isBool(is_group)
+            isString(topic) and isString(is_group)
     ):
-        add_new_chat(is_group, topic, 0)
-        return {'code': 200}
+        return jsonify(add_new_chat(is_group, topic)).json
     else:
         return {'code': 400}
 
@@ -106,3 +105,12 @@ def download_file(filename):
 @jsonrpc.method('get_centrifuge_token')
 def get_centrifuge_token():
     return jwt.encode({"sub": "0"}, config.CENTRIFUGO_SECRET).decode()
+
+
+@jsonrpc.method('add_new_member_to_chat')
+def add_new_member_to_chat_method(user_id, chat_id):
+    if (not isNone(user_id) and not isNone(chat_id) and
+            isInt(user_id) and isInt(chat_id)):
+        return add_new_member_to_chat(user_id, chat_id)
+    else:
+        return {'code': 400}

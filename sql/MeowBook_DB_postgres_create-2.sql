@@ -30,8 +30,8 @@ DROP TABLE IF EXISTS "Attachment";
 
 CREATE TABLE "User" (
 	"user_id" serial NOT NULL,
-	"name" serial NOT NULL,
-	"nick" serial NOT NULL UNIQUE,
+	"name" text NOT NULL,
+	"nick" text NOT NULL UNIQUE,
 	CONSTRAINT User_pk PRIMARY KEY ("user_id")
 ) WITH (
   OIDS=FALSE
@@ -42,7 +42,7 @@ CREATE TABLE "User" (
 CREATE TABLE "Member" (
 	"user_id" serial NOT NULL,
 	"chat_id" serial NOT NULL,
-	"last_unread_message_id" serial NOT NULL,
+	"last_unread_message_id" serial,
 	"member_id" serial NOT NULL,
 	CONSTRAINT Member_pk PRIMARY KEY ("member_id")
 ) WITH (
@@ -68,7 +68,7 @@ CREATE TABLE "Chat" (
 	"chat_id" serial NOT NULL,
 	"is_group_chat" bool NOT NULL,
 	"topic" text NOT NULL,
-	"last_message" serial NOT NULL,
+	"last_message" serial,
 	CONSTRAINT Chat_pk PRIMARY KEY ("chat_id")
 ) WITH (
   OIDS=FALSE
@@ -105,3 +105,5 @@ ALTER TABLE "Attachment" ADD CONSTRAINT "Attachment_fk0" FOREIGN KEY ("chat_id")
 ALTER TABLE "Attachment" ADD CONSTRAINT "Attachment_fk1" FOREIGN KEY ("user_id") REFERENCES "User"("user_id");
 ALTER TABLE "Attachment" ADD CONSTRAINT "Attachment_fk2" FOREIGN KEY ("message_id") REFERENCES "Message"("message_id");
 
+alter table "Chat" alter last_message drop not null;
+alter table "Member" alter last_unread_message_id drop not null;
