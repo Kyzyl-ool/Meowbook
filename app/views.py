@@ -108,8 +108,10 @@ def upload_file(base64content, filename):
 
 
 @jsonrpc.method('download_file')
-def download_file(filename):
-    return s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename).get('Body').read().decode('utf-8')
+def download_file(filename, filetype):
+    bytes = s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename)['Body'].read()
+    encoded_bytes = base64.b64encode(bytes).decode('utf-8')
+    return {'file': encoded_bytes, 'type': filetype, 'name': filename}
 
 
 @jsonrpc.method('get_centrifuge_token')
