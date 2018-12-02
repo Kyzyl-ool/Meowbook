@@ -39,10 +39,20 @@ def new_message(chat_id, user_id, content):
             not isNone(chat_id) and not isNone(user_id) and not isNone(content) and
             isInt(chat_id) and isInt(user_id) and isString(content)
     ):
-        add_new_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'))
-        return {'code': 200}
+        return add_new_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'))
     else:
         return {'code': 400}
+
+@jsonrpc.method('new_file_message')
+def new_file_message(chat_id, user_id, content, filename, type, size):
+    if (
+            not isNone(chat_id) and not isNone(user_id) and not isNone(content) and not isNone(filename) and not isNone(type) and not isNone(size) and
+            isInt(chat_id) and isInt(user_id) and isString(content) and isString(filename) and isString(type) and isInt(size)
+    ):
+        return add_new_file_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'), filename, type, size)
+    else:
+        return {'code': 400}
+
 
 
 @jsonrpc.method('get_users')
@@ -126,12 +136,18 @@ def check_user_method(user_id):
 
 @jsonrpc.method('create_user')
 def create_user_method(user_id, name, nick):
-    print('new user')
-    print(user_id, name, nick, sep='\n')
     if (not isNone(user_id) and isInt(user_id) and
             not isNone(name) and isString(name) and
             not isNone(nick) and isString(nick) and
-    user_id > 0):
+            user_id > 0):
         return create_user(user_id, name, nick)
+    else:
+        return {'code': 400}
+
+
+@jsonrpc.method('user_name_by_id')
+def user_name_by_id_method(user_id):
+    if (not isNone(user_id) and isInt(user_id)):
+        return get_name_by_id(user_id)
     else:
         return {'code': 400}

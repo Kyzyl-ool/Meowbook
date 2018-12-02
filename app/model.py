@@ -41,12 +41,35 @@ def add_new_chat(is_group_chat, topic):
 
 
 def add_new_message(chat_id, user_id, content, sent):
-    execute("""
-		INSERT INTO "Message" (chat_id, user_id, content, sent) VALUES (%(chat_id)s, %(user_id)s, %(content)s, %(sent)s);
+    t = query_all("""
+		INSERT INTO "Message" (chat_id, user_id, content, sent) VALUES (%(chat_id)s, %(user_id)s, %(content)s, %(sent)s)
+		returning message_id;
 		""",
-            chat_id=int(chat_id), user_id=int(user_id), content=str(content), sent=sent
-            )
+                  chat_id=int(chat_id), user_id=int(user_id), content=str(content), sent=sent
+                  )
     commit()
+    return t
+
+
+def add_new_file_message(chat_id, user_id, content, sent, filename, type, size):
+    m = add_new_message(chat_id, user_id, content, sent)
+    print(m)
+
+    mid = m[0]['message_id']
+    t = query_all("""
+    INSERT INTO "Attachment" (chat_id, user_id, message_id, type, url, size)
+    values (%(chat_id)s, %(user_id)s, %(message_id)s, %(type)s, %(filename)s, %(size)s) 
+    returning attach_id;
+    """,
+                  chat_id=int(chat_id),
+                  user_id=int(user_id),
+                  message_id=int(mid),
+                  type=str(type),
+                  filename=str(filename),
+                  size=int(size)
+                  )
+    commit()
+    return t
 
 
 def get_messages(chat_id):
@@ -78,3 +101,10 @@ def create_user(user_id, name, nick):
                   user_id=int(user_id), name=str(name), nick=str(nick))
     commit()
     return t
+
+
+def get_name_by_id(user_id):
+    return query_all("""
+    SELECT name FROM "User" WHERE user_id = %(user_id)s;
+    """, user_id=int(user_id))
+
