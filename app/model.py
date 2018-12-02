@@ -18,7 +18,7 @@ def get_chats_list():
 
 def get_members_list(user_id):
 	return query_all("""
-		SELECT topic FROM "Chat"
+		SELECT topic, "Chat".chat_id FROM "Chat"
 		JOIN "Member" ON "Chat".chat_id = "Member".chat_id
 		AND user_id = %(user_id)s;
 	""",
@@ -41,8 +41,8 @@ def add_new_message(chat_id, user_id, content, sent):
 	)
 	commit()
 
-def get_messages(chat_id, user_id):
+def get_messages(chat_id):
 	return query_all("""
-		SELECT content FROM "Message"
-		WHERE chat_id = %(chat_id)s AND user_id = %(user_id)s;
-		""", chat_id = int(chat_id), user_id = int(user_id))
+		SELECT content, sent, user_id, message_id FROM "Message"
+		WHERE chat_id = %(chat_id)s;
+		""", chat_id = int(chat_id))

@@ -1,6 +1,9 @@
 from flask import request, abort, jsonify, redirect
 from app import app, jsonrpc, s3_client, cent_client
 from .model import *
+from .vk_requests import *
+from .checkers import *
+
 import json
 import time
 import requests
@@ -13,107 +16,93 @@ from flask import make_response, request, current_app
 from functools import update_wrapper
 
 
-
-
-
-
-def isNone(var):
-	return var is None
-
-def isString(var):
-	return isinstance(var, str)
-
-def isInt(var):
-	return isinstance(var, int)
-
-def isBool(var):
-	return isinstance(var, bool)
-
 @jsonrpc.method('new_chat')
 def new_chat(topic, is_group):
-	if (
-		not isNone(topic) and not isNone(is_group) and
-		isString(topic) and isBool(is_group)
-		):
-		add_new_chat(is_group, topic, 0)
-		return {'code': 200}
-	else:
-		return {'code': 400}
+    if (
+            not isNone(topic) and not isNone(is_group) and
+            isString(topic) and isBool(is_group)
+    ):
+        add_new_chat(is_group, topic, 0)
+        return {'code': 200}
+    else:
+        return {'code': 400}
 
 
 @jsonrpc.method('new_message')
 def new_message(chat_id, user_id, content):
-	# publish data into channel
-	channel = "chat1"
-	data = {"text": content}
-	cent_client.publish(channel, data)
+    # publish data into channel
 
-	if (
-		not isNone(chat_id) and not isNone(user_id) and not isNone(content) and
-		isInt(chat_id) and isInt(user_id) and isString(content)
-		):
-		add_new_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'))
-		return {'code': 200}
-	else:
-		return {'code': 400}
+    # channel = "public:chat1"
+    # data = {"text": content}
+    # cent_client.publish(channel, data)
+
+    if (
+            not isNone(chat_id) and not isNone(user_id) and not isNone(content) and
+            isInt(chat_id) and isInt(user_id) and isString(content)
+    ):
+        add_new_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'))
+        return {'code': 200}
+    else:
+        return {'code': 400}
+
 
 @jsonrpc.method('get_users')
 def get_users(mask):
-	if (not isNone(mask) and isString(mask)):
-		return jsonify(get_users_list_by_mask(mask)).json
-	else:
-		return {'code': 400}
+    if (not isNone(mask) and isString(mask)):
+        return jsonify(get_users_list_by_mask(mask)).json
+    else:
+        return {'code': 400}
+
 
 @jsonrpc.method('get_chats')
 def get_chats(user_id):
-	print('user id: ',user_id)
-	return jsonify(get_members_list(user_id)).json
+    return jsonify(get_members_list(user_id)).json
+
 
 @jsonrpc.method('get_messages')
-def get_message(chat_id, user_id):
-	if (not isNone(chat_id) and not isNone(user_id) and
-		isInt(chat_id) and isInt(user_id)
-		):
-		return jsonify(get_messages(chat_id, user_id)).json
-	else:
-		return {'code': 400}
+def get_message(chat_id):
+    if (not isNone(chat_id) and
+            isInt(chat_id)
+    ):
+        return jsonify(get_messages(chat_id)).json
+    else:
+        return {'code': 400}
+
 
 @app.route('/get_first_token/')
-def get_first_token():
-	return redirect('https://oauth.vk.com/authorize?client_id=6763334&redirect_uri=http://127.0.0.1:3000/authpage/&v=5.92&display=page&response_type=code&scope=1')
+def get_first_token_method():
+    return get_first_token()
 
 
 @jsonrpc.method('get_access_token')
-def auth(code):
-	print(code)
-	access_token_url = 'https://oauth.vk.com/access_token?client_id=6763334&client_secret=UkX5Gbkg2pJdK9PfHunI&redirect_uri=http://127.0.0.1:3000/authpage/&code={}'.format(code)
-	resp = requests.get(access_token_url)
-	print(resp.text)
-	return resp.text
-	# json_data = json.loads(resp.text)
-	# return json_data
+def get_access_token_method(code):
+    return get_access_token(code)
+
+
+# json_data = json.loads(resp.text)
+# return json_data
 
 @jsonrpc.method('get_user_data')
-def get_user_data(access_token, user_id):
-	user_data_url = 'https://api.vk.com/method/users.get?user_ids={}&access_token={}&v=5.92'.format(user_id, access_token)
-	resp = requests.get(user_data_url)
-	return resp.text
+def get_user_data_method(access_token, user_id):
+    return get_user_data(access_token, user_id)
+
 
 @jsonrpc.method('upload_file')
 def upload_file(base64content, filename):
-	if (s3_client.put_object(
-								Bucket=config.BUCKET_NAME,
-								Key=filename,
-								Body=base64.b64decode(base64content) )):
-		return {'code': 200}
-	else:
-		return {'code': 500, 'error': 'Error with s3 client.'}
+    if (s3_client.put_object(
+            Bucket=config.BUCKET_NAME,
+            Key=filename,
+            Body=base64.b64decode(base64content))):
+        return {'code': 200}
+    else:
+        return {'code': 500, 'error': 'Error with s3 client.'}
+
 
 @jsonrpc.method('download_file')
 def download_file(filename):
-	return s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename).get('Body').read().decode('utf-8')
+    return s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename).get('Body').read().decode('utf-8')
 
 
 @jsonrpc.method('get_centrifuge_token')
 def get_centrifuge_token():
-	return jwt.encode({"sub": ""}, config.CENTRIFUGO_SECRET).decode()
+    return jwt.encode({"sub": "0"}, config.CENTRIFUGO_SECRET).decode()

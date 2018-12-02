@@ -8,6 +8,8 @@ ALTER TABLE "Message" DROP CONSTRAINT IF EXISTS "Message_fk0";
 
 ALTER TABLE "Message" DROP CONSTRAINT IF EXISTS "Message_fk1";
 
+ALTER TABLE "Chat" DROP CONSTRAINT IF EXISTS "Chat_fk0";
+
 ALTER TABLE "Attachment" DROP CONSTRAINT IF EXISTS "Attachment_fk0";
 
 ALTER TABLE "Attachment" DROP CONSTRAINT IF EXISTS "Attachment_fk1";
@@ -24,10 +26,12 @@ DROP TABLE IF EXISTS "Chat";
 
 DROP TABLE IF EXISTS "Attachment";
 
+
+
 CREATE TABLE "User" (
 	"user_id" serial NOT NULL,
-	"name" text NOT NULL,
-	"nick" text NOT NULL UNIQUE,
+	"name" serial NOT NULL,
+	"nick" serial NOT NULL UNIQUE,
 	CONSTRAINT User_pk PRIMARY KEY ("user_id")
 ) WITH (
   OIDS=FALSE
@@ -38,7 +42,9 @@ CREATE TABLE "User" (
 CREATE TABLE "Member" (
 	"user_id" serial NOT NULL,
 	"chat_id" serial NOT NULL,
-	"last_unread_message_id" serial NOT NULL
+	"last_unread_message_id" serial NOT NULL,
+	"member_id" serial NOT NULL,
+	CONSTRAINT Member_pk PRIMARY KEY ("member_id")
 ) WITH (
   OIDS=FALSE
 );
@@ -77,7 +83,7 @@ CREATE TABLE "Attachment" (
 	"message_id" serial NOT NULL,
 	"type" text NOT NULL,
 	"url" text NOT NULL,
-	"size" float NOT NULL,
+	"size" serial NOT NULL,
 	CONSTRAINT Attachment_pk PRIMARY KEY ("attach_id")
 ) WITH (
   OIDS=FALSE
@@ -93,7 +99,9 @@ ALTER TABLE "Member" ADD CONSTRAINT "Member_fk2" FOREIGN KEY ("last_unread_messa
 ALTER TABLE "Message" ADD CONSTRAINT "Message_fk0" FOREIGN KEY ("chat_id") REFERENCES "Chat"("chat_id");
 ALTER TABLE "Message" ADD CONSTRAINT "Message_fk1" FOREIGN KEY ("user_id") REFERENCES "User"("user_id");
 
+ALTER TABLE "Chat" ADD CONSTRAINT "Chat_fk0" FOREIGN KEY ("last_message") REFERENCES "Message"("message_id");
 
 ALTER TABLE "Attachment" ADD CONSTRAINT "Attachment_fk0" FOREIGN KEY ("chat_id") REFERENCES "Chat"("chat_id");
 ALTER TABLE "Attachment" ADD CONSTRAINT "Attachment_fk1" FOREIGN KEY ("user_id") REFERENCES "User"("user_id");
 ALTER TABLE "Attachment" ADD CONSTRAINT "Attachment_fk2" FOREIGN KEY ("message_id") REFERENCES "Message"("message_id");
+
