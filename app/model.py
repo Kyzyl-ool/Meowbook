@@ -62,3 +62,19 @@ def add_new_member_to_chat(user_id, chat_id):
     """, user_id=int(user_id), chat_id=int(chat_id))
     commit()
     return t
+
+
+def check_user_existance(user_id):
+    return query_all("""
+    SELECT * FROM "User"
+    WHERE user_id = %(user_id)s;
+    """, user_id=int(user_id))
+
+
+def create_user(user_id, name, nick):
+    t = query_all("""
+    INSERT INTO "User" (user_id, name, nick) VALUES (%(user_id)s, %(name)s, %(nick)s) RETURNING user_id;
+    """,
+                  user_id=int(user_id), name=str(name), nick=str(nick))
+    commit()
+    return t

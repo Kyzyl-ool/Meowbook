@@ -114,3 +114,24 @@ def add_new_member_to_chat_method(user_id, chat_id):
         return add_new_member_to_chat(user_id, chat_id)
     else:
         return {'code': 400}
+
+
+@jsonrpc.method('check_user')
+def check_user_method(user_id):
+    if (not isNone(user_id) and isInt(user_id)):
+        return jsonify(check_user_existance(user_id)).json
+    else:
+        return {'code': 400}
+
+
+@jsonrpc.method('create_user')
+def create_user_method(user_id, name, nick):
+    print('new user')
+    print(user_id, name, nick, sep='\n')
+    if (not isNone(user_id) and isInt(user_id) and
+            not isNone(name) and isString(name) and
+            not isNone(nick) and isString(nick) and
+    user_id > 0):
+        return create_user(user_id, name, nick)
+    else:
+        return {'code': 400}
