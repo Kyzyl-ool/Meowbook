@@ -16,6 +16,7 @@ from flask import make_response, request, current_app
 from functools import update_wrapper
 
 
+
 @jsonrpc.method('new_chat')
 def new_chat(topic, is_group):
     if (
@@ -29,6 +30,8 @@ def new_chat(topic, is_group):
 
 @jsonrpc.method('new_message')
 def new_message(chat_id, user_id, content):
+
+    print(chat_id, user_id, content, sep='\n')
     # publish data into channel
 
     # channel = "public:chat1"
@@ -60,7 +63,20 @@ def new_file_message(chat_id, user_id, content, filename, type, size):
             not isNone(chat_id) and not isNone(user_id) and not isNone(content) and not isNone(filename) and not isNone(type) and not isNone(size) and
             isInt(chat_id) and isInt(user_id) and isString(content) and isString(filename) and isString(type) and isInt(size)
     ):
-        return add_new_file_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'), filename, type, size)
+
+        the_time = time.strftime('%Y-%m-%d %H:%M:%S')
+        cent_client.broadcast([str(chat_id)], {
+            'user_id': user_id,
+            'content': content,
+            'time': the_time,
+            'spanText': '',
+            'id': chat_id,
+            'filename': filename,
+            'filetype': type,
+            'filesize': size
+        })
+
+        return add_new_file_message(chat_id, user_id, content, the_time, filename, type, size)
     else:
         return {'code': 400}
 

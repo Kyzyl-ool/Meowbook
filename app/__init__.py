@@ -21,8 +21,4 @@ s3_client = boto3_session.client(
 # initialize client instance.
 cent_client = Client(config.CENTRIFUGO_URL, api_key=config.CENTRIFUGO_API_KEY, timeout=1)
 
-
-
-
-
 from .views import *

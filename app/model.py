@@ -47,6 +47,7 @@ def add_new_message(chat_id, user_id, content, sent):
 		""",
                   chat_id=int(chat_id), user_id=int(user_id), content=str(content), sent=sent
                   )
+
     commit()
     return t
 
