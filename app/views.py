@@ -35,11 +35,22 @@ def new_message(chat_id, user_id, content):
     # data = {"text": content}
     # cent_client.publish(channel, data)
 
+    the_time = time.strftime('%Y-%m-%d %H:%M:%S')
+
+    cent_client.broadcast([str(chat_id)], {
+        'user_id': user_id,
+        'content': content,
+        'time': the_time,
+        'spanText': '',
+        'id': chat_id
+    })
+
+
     if (
             not isNone(chat_id) and not isNone(user_id) and not isNone(content) and
             isInt(chat_id) and isInt(user_id) and isString(content)
     ):
-        return add_new_message(chat_id, user_id, content, time.strftime('%Y-%m-%d %H:%M:%S'))
+        return add_new_message(chat_id, user_id, content, the_time)
     else:
         return {'code': 400}
 
@@ -119,7 +130,7 @@ def download_file(filename, filetype):
 
 
 @jsonrpc.method('get_centrifuge_token')
-def get_centrifuge_token():
+def get_centrifuge_token(user_id):
     return jwt.encode({"sub": "0"}, config.CENTRIFUGO_SECRET).decode()
 
 

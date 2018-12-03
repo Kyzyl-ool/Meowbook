@@ -75,8 +75,9 @@ def add_new_file_message(chat_id, user_id, content, sent, filename, type, size):
 def get_messages(chat_id):
     return query_all("""
     SELECT content, "Message".sent, "Message".user_id, "Message".message_id, type, url, size
-    FROM "Message" LEFT OUTER JOIN "Attachment" ON "Attachment".message_id = "Message".message_id
-    WHERE "Message".chat_id = %(chat_id)s;
+    FROM "Message" LEFT JOIN "Attachment" ON "Attachment".message_id = "Message".message_id
+    WHERE "Message".chat_id = %(chat_id)s
+    ORDER BY 4;
     """, chat_id=int(chat_id)
                      )
 
