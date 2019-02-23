@@ -145,8 +145,10 @@ def download_file(filename, filetype):
     return {'file': encoded_bytes, 'type': filetype, 'name': filename, 'lastmodified': the_object['LastModified']}
 
 
+from time import sleep
 @jsonrpc.method('get_centrifuge_token')
 def get_centrifuge_token(user_id):
+    sleep(2)
     return jwt.encode({"sub": "0"}, config.CENTRIFUGO_SECRET).decode()
 
 

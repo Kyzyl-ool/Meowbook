@@ -107,3 +107,18 @@ ALTER TABLE "Attachment" ADD CONSTRAINT "Attachment_fk2" FOREIGN KEY ("message_i
 
 alter table "Chat" alter last_message drop not null;
 alter table "Member" alter last_unread_message_id drop not null;
+
+
+
+
+DELETE FROM "Chat";
+DELETE FROM "User";
+DELETE FROM "Message";
+DELETE FROM "Member";
+
+INSERT INTO "User" VALUES (0, 'TestUser', 'TestNickname');
+INSERT INTO "Chat" VALUES (0, TRUE, 'Sample topic', NULL);
+INSERT INTO "Message" VALUES (0, 0, 0, 'Hello', '2018-11-11 11:11:11');
+INSERT INTO "Member" VALUES (0, 0, 0, 1);
+
+

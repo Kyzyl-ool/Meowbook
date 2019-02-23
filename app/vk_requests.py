@@ -1,7 +1,7 @@
 from flask import request, redirect
 import requests
 
-FRONTEND_SERVER = 'http://192.168.0.105:3000/authpage/'
+FRONTEND_SERVER = 'http://127.0.0.1:3000/authpage/'
 
 def get_user_data(access_token, user_id):
 	user_data_url = 'https://api.vk.com/method/users.get?user_ids={}&access_token={}&v=5.92'.format(user_id, access_token)
