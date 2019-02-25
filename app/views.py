@@ -15,6 +15,9 @@ from datetime import timedelta
 from flask import make_response, request, current_app
 from functools import update_wrapper
 
+from pymemcache.client import base
+memcache_client = base.Client(('127.0.0.1', 11211))
+
 
 
 @jsonrpc.method('new_chat')
@@ -100,7 +103,16 @@ def get_message(chat_id):
     if (not isNone(chat_id) and
             isInt(chat_id)
     ):
-        return jsonify(get_messages(chat_id)).json
+        result = memcache_client.get('get_messages({})'.format(chat_id))
+        if result is None:
+            print('messages of chat {} taken from DB'.format(chat_id))
+            result = jsonify(get_messages(chat_id)).json
+            memcache_client.set('get_messages({})'.format(chat_id), json.dumps(result))
+        else:
+            print('messages of chat {} from memcache'.format(chat_id))
+            result = json.loads(result)
+
+        return result
     else:
         return {'code': 400}
 
@@ -138,11 +150,9 @@ def upload_file(base64content, filename):
 def download_file(filename, filetype):
     the_object = s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename)
     bytes = the_object['Body'].read()
-
     encoded_bytes = base64.b64encode(bytes).decode('utf-8')
-
-
     return {'file': encoded_bytes, 'type': filetype, 'name': filename, 'lastmodified': the_object['LastModified']}
+        
 
 
 from time import sleep
