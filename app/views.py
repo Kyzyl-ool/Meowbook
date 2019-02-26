@@ -143,6 +143,8 @@ def upload_file(base64content, filename):
             Bucket=config.BUCKET_NAME,
             Key=filename,
             Body=base64.b64decode(base64content))):
+        s3_client.download_file(Bucket=config.BUCKET_NAME, Key=filename, Filename='/www/meowbook.org/public/'+filename)
+        memcache_client.set('file_'+filename, 1)
         return {'code': 200}
     else:
         return {'code': 500, 'error': 'Error with s3 client.'}
@@ -150,10 +152,20 @@ def upload_file(base64content, filename):
 
 @jsonrpc.method('download_file')
 def download_file(filename, filetype):
-    the_object = s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename)
-    bytes = the_object['Body'].read()
-    encoded_bytes = base64.b64encode(bytes).decode('utf-8')
-    return {'file': encoded_bytes, 'type': filetype, 'name': filename, 'lastmodified': the_object['LastModified']}
+    file_flag = memcache_client.get('file_'+filename)
+    if file_flag is None:
+        s3_client.download_file(Bucket=config.BUCKET_NAME, Key=filename, Filename='/www/meowbook.org/public/'+filename)
+        memcache_client.set('file_'+filename, 1)
+        return {'code': 200, 'text': 'file '+filename+' downloaded', 'name': filename, 'type': filetype}
+    
+    return {'code': 200, 'text': 'file '+filename+' taken from server', 'name': filename, 'type': filetype}
+
+    
+    
+    # the_object = s3_client.get_object(Bucket=config.BUCKET_NAME, Key=filename)
+    # bytes = the_object['Body'].read()
+    # encoded_bytes = base64.b64encode(bytes).decode('utf-8')
+    # return {'file': encoded_bytes, 'type': filetype, 'name': filename, 'lastmodified': the_object['LastModified']}
         
 
 
