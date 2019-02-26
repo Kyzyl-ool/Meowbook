@@ -6,7 +6,7 @@ import psycopg2
 class JSONRPCTest(unittest.TestCase):
 	def setUp(self):
 		self.app = app.test_client()
-		self.server = ServiceProxy('http://meowbook.org:5000/api/')
+		self.server = ServiceProxy('http://127.0.0.1:5000/')
 
 	def executeSQL(self, file, connection):
 		file = open(file, 'r')
@@ -17,28 +17,26 @@ class JSONRPCTest(unittest.TestCase):
 		file.close()
 
 	def setNewDBData(self):
-		conn = psycopg2.connect(user = 'postgres', database = 'template1')
-		self.executeSQL('sql/DB.sql', conn)
-		self.executeSQL('sql/DB_VALUES.sql', conn)
+		conn = psycopg2.connect(user = 'kyzyl-ool', database = 'template1')
+		self.executeSQL('sql/MeowBook_DB_postgres_create-2.sql', conn)
 
 	def test_get_users(self):
 		self.setNewDBData()
 		
-		s = self.server.get_users('root')
+		s = self.server.get_users('TestUser')
 		# expected = {'id': '2fe4c96c-f4d6-4430-b23d-3ddbc67da184', 'jsonrpc': '2.0', 'result': {'0': {'name': 'root', 'nick': 'Koren', 'user_id': 0}}}
 
 
-		self.assertEqual(s['result']['0']['nick'], 'Koren')
+		self.assertEqual(s['result']['0']['nick'], 'TestNickname')
 		# self.assertEqual(s['result']['1']['nick'], 'NeKoren')
 		# print('--->', s, '<---', sep = '')
 
 	def test_new_chat(self):
 		self.setNewDBData()
 
-		s = self.server.new_chat('NEWCHAT', True)
+		self.server.new_chat('NEWCHAT', True)
 
-		tmp = self.server.get_chats()
-		# print(tmp['result'])
+		tmp = self.server.get_chats(0)
 		self.assertEqual(tmp['result']['1']['topic'], 'NEWCHAT')
 
 

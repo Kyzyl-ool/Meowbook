@@ -33,8 +33,8 @@ def new_chat(topic, is_group):
 
 @jsonrpc.method('new_message')
 def new_message(chat_id, user_id, content):
-
-    print(chat_id, user_id, content, sep='\n')
+    
+    # print(chat_id, user_id, content, sep='\n')
     # publish data into channel
 
     # channel = "public:chat1"
@@ -56,6 +56,7 @@ def new_message(chat_id, user_id, content):
             not isNone(chat_id) and not isNone(user_id) and not isNone(content) and
             isInt(chat_id) and isInt(user_id) and isString(content)
     ):
+        memcache_client.delete('get_messages({})'.format(chat_id))
         return add_new_message(chat_id, user_id, content, the_time)
     else:
         return {'code': 400}
@@ -66,6 +67,7 @@ def new_file_message(chat_id, user_id, content, filename, type, size):
             not isNone(chat_id) and not isNone(user_id) and not isNone(content) and not isNone(filename) and not isNone(type) and not isNone(size) and
             isInt(chat_id) and isInt(user_id) and isString(content) and isString(filename) and isString(type) and isInt(size)
     ):
+        memcache_client.delete('get_messages({})'.format(chat_id))
 
         the_time = time.strftime('%Y-%m-%d %H:%M:%S')
         cent_client.broadcast([str(chat_id)], {
@@ -105,11 +107,11 @@ def get_message(chat_id):
     ):
         result = memcache_client.get('get_messages({})'.format(chat_id))
         if result is None:
-            print('messages of chat {} taken from DB'.format(chat_id))
+            # print('messages of chat {} taken from DB'.format(chat_id))
             result = jsonify(get_messages(chat_id)).json
             memcache_client.set('get_messages({})'.format(chat_id), json.dumps(result))
         else:
-            print('messages of chat {} from memcache'.format(chat_id))
+            # print('messages of chat {} from memcache'.format(chat_id))
             result = json.loads(result)
 
         return result

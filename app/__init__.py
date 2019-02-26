@@ -9,7 +9,7 @@ from werkzeug.contrib.profiler import ProfilerMiddleware
 app = Flask(__name__)
 CORS(app)
 jsonrpc = JSONRPC(app, '/')
-# app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[3])
+app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[30])
 
 
 boto3_session = boto3.session.Session()

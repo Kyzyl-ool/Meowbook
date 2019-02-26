@@ -1,0 +1,1012 @@
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+--------------------------------------------------------------------------------
+PATH: '/'
+         1470 function calls (1451 primitive calls) in 0.030 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 297 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.013    0.013    0.013    0.013 {function DictCursor.execute at 0x111a93488}
+        1    0.012    0.012    0.012    0.012 {built-in method psycopg2._psycopg._connect}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:383(pop)
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       59    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:869(__next__)
+    82/78    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.027    0.027 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:357(dispatch)
+      134    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:475(_parse)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:1300(get_wsgi_response)
+    67/66    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method psycopg2._psycopg.parse_dsn}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.027    0.027 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+      4/2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:71(_compile)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+       23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:1187(set)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:1187(get_wsgi_headers)
+        1    0.000    0.000    0.030    0.030 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/contrib/profiler.py:95(runapp)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1227 function calls (1216 primitive calls) in 0.047 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 252 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.032    0.032    0.032    0.032 {built-in method psycopg2._psycopg._connect}
+        1    0.006    0.006    0.006    0.006 {function DictCursor.execute at 0x111a93488}
+        1    0.006    0.006    0.006    0.006 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+        1    0.000    0.000    0.006    0.006 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/psycopg2/extras.py:141(execute)
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+       59    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:219(set_cors_headers)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        1    0.000    0.000    0.000    0.000 /www/meowbook.org/app/db.py:28(<dictcomp>)
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:1310(debug)
+    82/78    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        7    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        1    0.000    0.000    0.039    0.039 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        1    0.000    0.000    0.032    0.032 /www/meowbook.org/app/db.py:6(get_connection)
+      102    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/psycopg2/extras.py:136(__init__)
+       73    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+      5/3    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+       23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/encodings/utf_8.py:15(decode)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         922 function calls (912 primitive calls) in 0.010 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 239 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2    0.007    0.003    0.007    0.003 {method 'recv' of '_socket.socket' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        1    0.000    0.000    0.000    0.000 {method 'connect' of '_socket.socket' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+       38    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        8    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+       42    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:139(__init__)
+       32    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        1    0.000    0.000    0.008    0.008 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        1    0.000    0.000    0.007    0.007 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymemcache/client/base.py:742(_fetch_cmd)
+    53/49    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       46    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       88    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 {method 'sendall' of '_socket.socket' objects}
+    25/23    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/http.py:344(parse_options_header)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+        1    0.000    0.000    0.008    0.008 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:357(dispatch)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:174(get_content_length)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:1187(set)
+        2    0.000    0.000    0.007    0.003 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymemcache/client/base.py:1103(_readline)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1443(match)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymemcache/client/base.py:263(_connect)
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:393(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/_internal.py:190(__get__)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/helpers.py:47(jsonify_status_code)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         4640 function calls (4584 primitive calls) in 0.201 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 711 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.071    0.071    0.071    0.071 {method 'read' of '_ssl._SSLSocket' objects}
+        1    0.038    0.038    0.038    0.038 {method 'do_handshake' of '_ssl._SSLSocket' objects}
+        1    0.036    0.036    0.036    0.036 {built-in method _socket.getaddrinfo}
+        1    0.020    0.020    0.020    0.020 {method 'load_verify_locations' of '_ssl._SSLContext' objects}
+        1    0.014    0.014    0.014    0.014 {method 'connect' of '_socket.socket' objects}
+        1    0.004    0.004    0.004    0.004 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:407(close)
+        1    0.004    0.004    0.004    0.004 {built-in method _socket.gethostbyname}
+        4    0.002    0.001    0.002    0.001 {method 'settimeout' of '_socket.socket' objects}
+        1    0.001    0.001    0.001    0.001 {built-in method _scproxy._get_proxy_settings}
+       10    0.001    0.000    0.001    0.000 {built-in method posix.stat}
+       16    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x10fa8ef70}
+     28/6    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        1    0.000    0.000    0.000    0.000 {built-in method _scproxy._get_proxies}
+        6    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/cookiejar.py:1197(vals_sorted_by_key)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:194(loads)
+      118    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:673(__getitem__)
+      352    0.000    0.000    0.001    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py:1097(_real_close)
+      132    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:742(__iter__)
+  157/156    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        1    0.000    0.000    0.004    0.004 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py:2522(_proxy_bypass_macosx_sysconf)
+      228    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py:2456(getproxies_environment)
+        1    0.000    0.000    0.000    0.000 {method 'getpeercert' of '_ssl._SSLSocket' objects}
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+      118    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:751(encode)
+       26    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+    84/80    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      220    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:755(decode)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1239 function calls (1228 primitive calls) in 0.029 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 254 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.014    0.014    0.014    0.014 {function DictCursor.execute at 0x111a93488}
+        1    0.011    0.011    0.011    0.011 {built-in method psycopg2._psycopg._connect}
+       65    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+       59    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+    82/78    0.000    0.000    0.001    0.000 {built-in method builtins.getattr}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+        1    0.000    0.000    0.026    0.026 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method psycopg2._psycopg.parse_dsn}
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:174(get_content_length)
+        1    0.000    0.000    0.027    0.027 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:357(dispatch)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+      105    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1443(match)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:299(loads)
+      7/5    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/http.py:344(parse_options_header)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+        3    0.000    0.000    0.000    0.000 {method 'sub' of 're.Pattern' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1997(create_url_adapter)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        6    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:194(loads)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         6505 function calls (6374 primitive calls) in 0.098 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 736 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       25    0.054    0.002    0.054    0.002 {method 'recv_into' of '_socket.socket' objects}
+        1    0.008    0.008    0.008    0.008 {built-in method _socket.getaddrinfo}
+        1    0.004    0.004    0.004    0.004 {method 'connect' of '_socket.socket' objects}
+       39    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/email/_policybase.py:311(header_fetch_parse)
+        1    0.001    0.001    0.001    0.001 {built-in method binascii.b2a_base64}
+        2    0.001    0.001    0.023    0.012 {method 'read' of '_io.BufferedReader' objects}
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        3    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:433(append)
+        9    0.001    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:390(_alias_event_name)
+       11    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/queue.py:121(put)
+        1    0.001    0.001    0.049    0.049 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:446(urlopen)
+      9/7    0.001    0.000    0.006    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:177(_emit)
+      522    0.001    0.000    0.001    0.000 {method 'index' of 'list' objects}
+       10    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/parse.py:109(_coerce_args)
+      678    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       52    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/model.py:527(get_shape_by_name)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:2117(do_teardown_request)
+      344    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.002    0.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:668(_parse)
+       52    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/model.py:543(resolve_shape_ref)
+       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/util/queue.py:17(_put)
+       35    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:664(__contains__)
+        1    0.000    0.000    0.098    0.098 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/contrib/profiler.py:95(runapp)
+        9    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        9    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:499(_get_items)
+       52    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/model.py:63(__init__)
+        1    0.000    0.000    0.093    0.093 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+       25    0.000    0.000    0.054    0.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:575(readinto)
+       67    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/hmac.py:33(__init__)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         5106 function calls (5083 primitive calls) in 0.169 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 653 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       12    0.145    0.012    0.145    0.012 {method 'recv_into' of '_socket.socket' objects}
+        1    0.004    0.004    0.004    0.004 {method 'connect' of '_socket.socket' objects}
+        1    0.003    0.003    0.003    0.003 {built-in method _socket.getaddrinfo}
+        9    0.001    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:390(_alias_event_name)
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        1    0.001    0.001    0.001    0.001 {built-in method binascii.b2a_base64}
+      522    0.001    0.000    0.001    0.000 {method 'index' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:174(get_content_length)
+       12    0.000    0.000    0.000    0.000 {method '_checkClosed' of '_io._IOBase' objects}
+      669    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        9    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        1    0.000    0.000    0.000    0.000 {method 'sendall' of '_socket.socket' objects}
+        1    0.000    0.000    0.130    0.130 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/httpsession.py:242(send)
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:668(_parse)
+        9    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        2    0.000    0.000    0.027    0.013 {method 'read' of '_io.BufferedReader' objects}
+       58    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:633(__getitem__)
+      9/7    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:177(_emit)
+        1    0.000    0.000    0.128    0.128 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:319(_make_request)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:139(__init__)
+       12    0.000    0.000    0.145    0.012 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:575(readinto)
+      231    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.008    0.008 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/util/connection.py:32(create_connection)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:221(makefile)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:824(update)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/hmac.py:33(__init__)
+      303    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+    97/93    0.000    0.000    0.001    0.000 {built-in method builtins.getattr}
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:83(get_token)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1227 function calls (1216 primitive calls) in 0.043 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 252 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.023    0.023    0.023    0.023 {function DictCursor.execute at 0x111a93488}
+        1    0.016    0.016    0.016    0.016 {built-in method psycopg2._psycopg._connect}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:351(make_form_data_parser)
+        1    0.000    0.000    0.042    0.042 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1779(dispatch_request)
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        1    0.000    0.000    0.043    0.043 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1801(full_dispatch_request)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+    82/78    0.000    0.000    0.001    0.000 {built-in method builtins.getattr}
+       59    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:174(get_content_length)
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/helpers.py:64(_extract_raw_data_request)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/http.py:344(parse_options_header)
+       23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        1    0.000    0.000    0.041    0.041 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+      7/5    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+      102    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        1    0.000    0.000    0.042    0.042 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:357(dispatch)
+        3    0.000    0.000    0.000    0.000 {method 'sub' of 're.Pattern' objects}
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/_internal.py:190(__get__)
+       73    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:364(_load_form_data)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1227 function calls (1216 primitive calls) in 0.083 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 252 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.041    0.041    0.041    0.041 {built-in method psycopg2._psycopg._connect}
+        1    0.039    0.039    0.039    0.039 {function DictCursor.execute at 0x111a93488}
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/psycopg2/extras.py:167(__getitem__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+       59    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+    82/78    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        3    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:582(headers)
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/extension.py:171(cors_after_request)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+      102    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:1187(set)
+        1    0.000    0.000    0.081    0.081 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:92(_dump_arg_defaults)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+       23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        3    0.000    0.000    0.000    0.000 {method 'sub' of 're.Pattern' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:299(loads)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         915 function calls (905 primitive calls) in 0.023 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 234 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2    0.021    0.010    0.021    0.010 {method 'recv' of '_socket.socket' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+       38    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+       42    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       32    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        1    0.000    0.000    0.021    0.021 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+    53/49    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 {method 'sendall' of '_socket.socket' objects}
+        1    0.000    0.000    0.021    0.021 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymemcache/client/base.py:742(_fetch_cmd)
+        2    0.000    0.000    0.021    0.010 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymemcache/client/base.py:1103(_readline)
+        8    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+    25/23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+       87    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:1187(set)
+       38    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/http.py:344(parse_options_header)
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1443(match)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:219(set_cors_headers)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:249(probably_regex)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:2091(process_response)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+        1    0.000    0.000    0.023    0.023 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/contrib/profiler.py:95(runapp)
+       46    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:174(get_content_length)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         4290 function calls (4278 primitive calls) in 0.185 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 632 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.073    0.073    0.073    0.073 {method 'read' of '_ssl._SSLSocket' objects}
+        1    0.038    0.038    0.038    0.038 {method 'do_handshake' of '_ssl._SSLSocket' objects}
+        1    0.028    0.028    0.028    0.028 {method 'connect' of '_socket.socket' objects}
+        1    0.020    0.020    0.020    0.020 {method 'load_verify_locations' of '_ssl._SSLContext' objects}
+        1    0.013    0.013    0.013    0.013 {built-in method _socket.getaddrinfo}
+        1    0.002    0.002    0.002    0.002 {built-in method _socket.gethostbyname}
+        1    0.002    0.002    0.002    0.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:407(close)
+        1    0.000    0.000    0.000    0.000 {built-in method _scproxy._get_proxies}
+        1    0.000    0.000    0.000    0.000 {built-in method _scproxy._get_proxy_settings}
+      118    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:673(__getitem__)
+        5    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+      132    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:742(__iter__)
+       15    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x10fa8ef70}
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+      228    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+    78/74    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      347    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py:2456(getproxies_environment)
+  157/156    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+      118    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:751(encode)
+        1    0.000    0.000    0.000    0.000 {method 'getpeercert' of '_ssl._SSLSocket' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py:1097(_real_close)
+      220    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:755(decode)
+        1    0.000    0.000    0.000    0.000 {method 'set_ciphers' of '_ssl._SSLContext' objects}
+       26    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.099    0.099 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connection.py:312(connect)
+        1    0.000    0.000    0.174    0.174 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:319(_make_request)
+       10    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/parse.py:361(urlparse)
+      112    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:696(__iter__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/email/feedparser.py:471(_parse_headers)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1239 function calls (1228 primitive calls) in 0.014 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 254 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.007    0.007    0.007    0.007 {built-in method psycopg2._psycopg._connect}
+        1    0.003    0.003    0.003    0.003 {function DictCursor.execute at 0x111a93488}
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/_compat.py:127(<lambda>)
+       59    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+    82/78    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       38    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        1    0.000    0.000    0.012    0.012 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+      105    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:1187(set)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+       73    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:944(_set_status_code)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:973(get_data)
+        1    0.000    0.000    0.014    0.014 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/contrib/profiler.py:95(runapp)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:92(_dump_arg_defaults)
+        3    0.000    0.000    0.000    0.000 {method 'sub' of 're.Pattern' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:299(loads)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         5305 function calls (5282 primitive calls) in 0.090 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 642 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       57    0.079    0.001    0.079    0.001 {method 'recv_into' of '_socket.socket' objects}
+        9    0.001    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:390(_alias_event_name)
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        1    0.000    0.000    0.000    0.000 {built-in method binascii.b2a_base64}
+        2    0.000    0.000    0.041    0.021 {method 'read' of '_io.BufferedReader' objects}
+      522    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
+       57    0.000    0.000    0.080    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:575(readinto)
+      669    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       58    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:633(__getitem__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/auth.py:299(canonical_request)
+        1    0.000    0.000    0.040    0.040 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:319(_make_request)
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:83(get_token)
+      303    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+      9/7    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:177(_emit)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/parsers.py:778(_parse_non_payload_attrs)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:668(_parse)
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:219(isspace)
+       11    0.000    0.000    0.039    0.004 {method 'readline' of '_io.BufferedReader' objects}
+       57    0.000    0.000    0.000    0.000 {method '_checkClosed' of '_io._IOBase' objects}
+       57    0.000    0.000    0.000    0.000 {method '_checkReadable' of '_io._IOBase' objects}
+      231    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/auth.py:334(string_to_sign)
+    97/93    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      160    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:824(update)
+       35    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:664(__contains__)
+       81    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:607(__init__)
+       81    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:611(__hash__)
+       66    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         5264 function calls (5241 primitive calls) in 0.108 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 644 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       48    0.095    0.002    0.095    0.002 {method 'recv_into' of '_socket.socket' objects}
+        2    0.002    0.001    0.002    0.001 {method 'poll' of 'select.poll' objects}
+        9    0.001    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:390(_alias_event_name)
+        1    0.001    0.001    0.001    0.001 {built-in method binascii.b2a_base64}
+      522    0.001    0.000    0.001    0.000 {method 'index' of 'list' objects}
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+      669    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        2    0.000    0.000    0.054    0.027 {method 'read' of '_io.BufferedReader' objects}
+       48    0.000    0.000    0.095    0.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:575(readinto)
+        1    0.000    0.000    0.000    0.000 {method 'sendall' of '_socket.socket' objects}
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/parsers.py:778(_parse_non_payload_attrs)
+       58    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:633(__getitem__)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:668(_parse)
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:83(get_token)
+      231    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+      9/7    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:177(_emit)
+      303    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+      160    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       81    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:607(__init__)
+    97/93    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       35    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:664(__contains__)
+       48    0.000    0.000    0.000    0.000 {method '_checkReadable' of '_io._IOBase' objects}
+       50    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+        1    0.000    0.000    0.045    0.045 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:446(urlopen)
+       40    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:824(update)
+       66    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+       48    0.000    0.000    0.000    0.000 {method '_checkClosed' of '_io._IOBase' objects}
+       81    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:611(__hash__)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1029 function calls (1019 primitive calls) in 2.003 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 242 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.001    2.001    2.001    2.001 {built-in method time.sleep}
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+       50    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       40    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+    61/57    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        1    0.000    0.000    2.002    2.002 /www/meowbook.org/app/views.py:161(get_centrifuge_token)
+        1    0.000    0.000    2.002    2.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+       88    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+    31/29    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:104(__init__)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:183(dumps)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/http.py:344(parse_options_header)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jwt/api_jwt.py:41(encode)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:364(_load_form_data)
+        1    0.000    0.000    2.002    2.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:357(dispatch)
+        8    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jwt/api_jws.py:77(encode)
+       19    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/_internal.py:190(__get__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1347(update)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/hmac.py:33(__init__)
+       47    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/abc.py:137(__instancecheck__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1443(match)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1227 function calls (1216 primitive calls) in 0.028 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 252 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.013    0.013    0.013    0.013 {built-in method psycopg2._psycopg._connect}
+        1    0.012    0.012    0.012    0.012 {function DictCursor.execute at 0x111a93488}
+        3    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+       59    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+    82/78    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.025    0.025 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.027    0.027 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:357(dispatch)
+       23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+      102    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        3    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:299(loads)
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        3    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:332(decode)
+        1    0.000    0.000    0.028    0.028 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/contrib/profiler.py:95(runapp)
+        3    0.000    0.000    0.000    0.000 {method 'sub' of 're.Pattern' objects}
+        3    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:194(loads)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/http.py:344(parse_options_header)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:174(get_content_length)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1227 function calls (1216 primitive calls) in 0.034 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 252 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.023    0.023    0.023    0.023 {built-in method psycopg2._psycopg._connect}
+        1    0.008    0.008    0.008    0.008 {function DictCursor.execute at 0x111a93488}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+       59    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+      102    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+    82/78    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.032    0.032 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+       23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        1    0.000    0.000    0.034    0.034 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/contrib/profiler.py:95(runapp)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        6    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:167(dumps)
+       73    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:92(_dump_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:1187(set)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:299(loads)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         915 function calls (905 primitive calls) in 0.003 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 234 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        2    0.000    0.000    0.000    0.000 {method 'recv' of '_socket.socket' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+       38    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymemcache/client/base.py:742(_fetch_cmd)
+       42    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       32    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+    53/49    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        1    0.000    0.000    0.000    0.000 {method 'sendall' of '_socket.socket' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:299(loads)
+        8    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/sessions.py:74(__init__)
+       87    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+    25/23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:92(_dump_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/http.py:344(parse_options_header)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymemcache/client/base.py:1103(_readline)
+       38    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:1187(set)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wsgi.py:174(get_content_length)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:2091(process_response)
+        1    0.000    0.000    0.003    0.003 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/contrib/profiler.py:95(runapp)
+       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:393(__init__)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         4290 function calls (4278 primitive calls) in 0.175 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 632 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.052    0.052    0.052    0.052 {method 'read' of '_ssl._SSLSocket' objects}
+        1    0.049    0.049    0.049    0.049 {method 'do_handshake' of '_ssl._SSLSocket' objects}
+        1    0.019    0.019    0.019    0.019 {built-in method _socket.getaddrinfo}
+        1    0.017    0.017    0.017    0.017 {method 'connect' of '_socket.socket' objects}
+        1    0.015    0.015    0.015    0.015 {method 'load_verify_locations' of '_ssl._SSLContext' objects}
+        1    0.005    0.005    0.005    0.005 {built-in method _socket.gethostbyname}
+        4    0.005    0.001    0.005    0.001 {method 'settimeout' of '_socket.socket' objects}
+        1    0.002    0.002    0.002    0.002 {built-in method _scproxy._get_proxy_settings}
+        1    0.002    0.002    0.002    0.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:407(close)
+        5    0.001    0.000    0.001    0.000 {built-in method posix.stat}
+       15    0.001    0.000    0.001    0.000 {built-in method __new__ of type object at 0x10fa8ef70}
+        1    0.000    0.000    0.000    0.000 {method 'write' of '_ssl._SSLSocket' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _scproxy._get_proxies}
+       22    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py:335(notify)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py:61(path_url)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:817(_new_conn)
+      118    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:673(__getitem__)
+      132    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:742(__iter__)
+    98/97    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+      118    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:751(encode)
+      347    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py:2456(getproxies_environment)
+      228    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py:1097(_real_close)
+       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/queue.py:121(put)
+        1    0.000    0.000    0.000    0.000 {method 'getpeercert' of '_ssl._SSLSocket' objects}
+      112    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:696(__iter__)
+      220    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:755(decode)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/util/timeout.py:93(__init__)
+  157/156    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         1239 function calls (1228 primitive calls) in 0.011 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 254 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.005    0.005    0.005    0.005 {built-in method psycopg2._psycopg._connect}
+        1    0.003    0.003    0.003    0.003 {function DictCursor.execute at 0x111a93488}
+       33    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+       73    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+      105    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       59    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+       65    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+    82/78    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        2    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+       69    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/ctx.py:428(auto_pop)
+    45/43    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        7    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:183(dumps)
+        1    0.000    0.000    0.009    0.009 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:92(_dump_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /www/meowbook.org/app/db.py:28(<dictcomp>)
+        2    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:167(dumps)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+    66/65    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:182(encode)
+        3    0.000    0.000    0.000    0.000 {method 'sub' of 're.Pattern' objects}
+       23    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        1    0.000    0.000    0.008    0.008 /www/meowbook.org/app/db.py:24(query_all)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         5170 function calls (5147 primitive calls) in 0.146 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 642 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       30    0.129    0.004    0.129    0.004 {method 'recv_into' of '_socket.socket' objects}
+        1    0.004    0.004    0.004    0.004 {method 'settimeout' of '_socket.socket' objects}
+        1    0.001    0.001    0.001    0.001 {method 'poll' of 'select.poll' objects}
+        9    0.001    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:390(_alias_event_name)
+        1    0.001    0.001    0.001    0.001 {built-in method binascii.b2a_base64}
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+      522    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
+      669    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        2    0.000    0.000    0.065    0.033 {method 'read' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.000    0.000 {method 'sendall' of '_socket.socket' objects}
+       30    0.000    0.000    0.130    0.004 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:575(readinto)
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+       58    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:633(__getitem__)
+      9/7    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:177(_emit)
+        6    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py:1185(putheader)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py:1061(putrequest)
+        1    0.000    0.000    0.066    0.066 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/response.py:72(read)
+      231    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       30    0.000    0.000    0.000    0.000 {method '_checkReadable' of '_io._IOBase' objects}
+      303    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/parsers.py:778(_parse_non_payload_attrs)
+    97/93    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       81    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:607(__init__)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/hmac.py:33(__init__)
+       50    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:83(get_token)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:668(_parse)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:824(update)
+      160    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.071    0.071 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py:319(_make_request)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         5235 function calls (5212 primitive calls) in 0.216 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 642 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       43    0.204    0.005    0.204    0.005 {method 'recv_into' of '_socket.socket' objects}
+        9    0.001    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:390(_alias_event_name)
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+        1    0.001    0.001    0.001    0.001 {built-in method binascii.b2a_base64}
+        1    0.000    0.000    0.000    0.000 {method 'poll' of 'select.poll' objects}
+      522    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
+        2    0.000    0.000    0.030    0.015 {method 'read' of '_io.BufferedReader' objects}
+       43    0.000    0.000    0.205    0.005 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py:575(readinto)
+      669    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       43    0.000    0.000    0.000    0.000 {method '_checkClosed' of '_io._IOBase' objects}
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:668(_parse)
+       58    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:633(__getitem__)
+      231    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       17    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:83(get_token)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/parsers.py:778(_parse_non_payload_attrs)
+      303    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:194(loads)
+       81    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/awsrequest.py:607(__init__)
+      9/7    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/botocore/hooks.py:177(_emit)
+       35    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_collections_abc.py:664(__contains__)
+      160    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/dateutil/parser/_parser.py:433(append)
+       43    0.000    0.000    0.000    0.000 {method '_checkReadable' of '_io._IOBase' objects}
+    97/93    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       50    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       19    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.213    0.213 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+       40    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/hmac.py:33(__init__)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         989 function calls (979 primitive calls) in 2.004 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 235 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.002    2.002    2.002    2.002 {built-in method time.sleep}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:183(dumps)
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+       88    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        8    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jwt/api_jws.py:77(encode)
+       40    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+       50    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+    61/57    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        3    0.000    0.000    0.000    0.000 {method 'replace' of 'bytes' objects}
+        1    0.000    0.000    2.003    2.003 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/base64.py:51(b64encode)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jwt/api_jwt.py:41(encode)
+    31/29    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/hmac.py:33(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+       47    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       19    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:182(encode)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/core.py:171(get_cors_headers)
+       21    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+        1    0.000    0.000    2.004    2.004 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:357(dispatch)
+        1    0.000    0.000    2.003    2.003 /www/meowbook.org/app/views.py:161(get_centrifuge_token)
+       39    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:104(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+       54    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PATH: '/'
+         989 function calls (979 primitive calls) in 2.008 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 235 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.005    2.005    2.005    2.005 {built-in method time.sleep}
+       46    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:160(top)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:183(dumps)
+       88    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       50    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:68(__getattr__)
+       40    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:300(_get_current_object)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:284(__init__)
+    61/57    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+    31/29    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/local.py:344(__getattr__)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:204(iterencode)
+       19    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:34(_lookup_req_object)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:111(_load_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/wrappers.py:830(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/types.py:164(__get__)
+        1    0.000    0.000    2.005    2.005 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_jsonrpc/site.py:184(response_obj)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/datastructures.py:951(__getitem__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jwt/algorithms.py:149(<listcomp>)
+        8    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+       47    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jwt/api_jws.py:77(encode)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py:182(encode)
+       21    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/globals.py:48(_find_app)
+      7/5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/utils.py:68(__get__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:257(jsonify)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/hmac.py:33(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py:343(raw_decode)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/json/__init__.py:92(_dump_arg_defaults)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_cors/extension.py:171(cors_after_request)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py:299(loads)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py:1261(bind_to_environ)
+
+
+--------------------------------------------------------------------------------
+
