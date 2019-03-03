@@ -9,3 +9,5 @@ frontend/
 instance/config.py
 config/__init__.py
 centrifugo/config.json
+public/
+*nohup.out
