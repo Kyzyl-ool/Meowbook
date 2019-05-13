@@ -1,4 +1,5 @@
 from flask import request, redirect
+import config
 import requests
 
 FRONTEND_SERVER = 'http://127.0.0.1:3000/authpage/'
@@ -12,7 +13,7 @@ def get_first_token():
 	return redirect('https://oauth.vk.com/authorize?client_id=6763334&redirect_uri={}&v=5.92&display=page&response_type=code&scope=1'.format(FRONTEND_SERVER))
 
 def get_access_token(code):
-	access_token_url = 'https://oauth.vk.com/access_token?client_id=6763334&client_secret=UkX5Gbkg2pJdK9PfHunI&redirect_uri={}&code={}'.format(FRONTEND_SERVER, code)
+	access_token_url = 'https://oauth.vk.com/access_token?client_id=6763334&client_secret={}&redirect_uri={}&code={}'.format(config.VK_SECRET, FRONTEND_SERVER, code)
 	resp = requests.get(access_token_url)
 	print(resp.text)
 	return resp.text

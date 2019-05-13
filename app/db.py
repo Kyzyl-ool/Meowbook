@@ -1,11 +1,12 @@
 import flask
 import psycopg2
 import psycopg2.extras
+import config
 
 
 def get_connection():
     if not hasattr(flask.g, 'dbconn'):
-        flask.g.dbconn = psycopg2.connect(user='admin', database='2018-kyzylool-db', host='95.163.210.97', password='&?1$8{>[:tF{c!')
+        flask.g.dbconn = psycopg2.connect(user=config.DATABASE_ADMIN, database=config.DATABASE_NAME, host=config.DATABASE_HOST, password=config.DATABASE_PASSWORD)
         return flask.g.dbconn
     else:
         return flask.g.dbconn

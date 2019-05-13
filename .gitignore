@@ -13,3 +13,4 @@ public/
 *nohup.out
 front2/
 htmlcov/
+app/config.py

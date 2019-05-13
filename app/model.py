@@ -1,14 +1,14 @@
 from .db import *
-from flask_sqlalchemy import SQLAlchemy
 from app import app
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:&?1$8{>[:tF{c!@95.163.210.97/2018-kyzylool-db'
-db = SQLAlchemy(app)
+# from flask_sqlalchemy import SQLAlchemy
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:&?1$8{>[:tF{c!@95.163.210.97/2018-kyzylool-db'
+# db = SQLAlchemy(app)
 
-class Member(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    def __init__(self, username): self.username = username
+# class Member(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     username = db.Column(db.String(80), unique=True, nullable=False)
+#     def __init__(self, username): self.username = username
 
 
 def get_user():
