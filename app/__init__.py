@@ -4,11 +4,15 @@ from flask import Flask
 from flask_jsonrpc import JSONRPC
 from flask_cors import CORS
 from cent import Client
+
+
 # from werkzeug.contrib.profiler import ProfilerMiddleware
 
 app = Flask(__name__)
-CORS(app)
-jsonrpc = JSONRPC(app, '/')
+
+
+CORS(app, supports_credentials=True)
+jsonrpc = JSONRPC(app, '/backend')
 # app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[30])
 
 

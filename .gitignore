@@ -11,3 +11,5 @@ config/__init__.py
 centrifugo/config.json
 public/
 *nohup.out
+front2/
+htmlcov/
