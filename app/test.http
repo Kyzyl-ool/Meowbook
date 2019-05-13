@@ -5,14 +5,14 @@
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
 
-POST http://127.0.0.1:5000/backend
+POST https://meowbook.ru/backend
 Content-Type: application/json
 
 {
   "jsonrpc": "2.0",
   "id": 0,
-  "method": "run_task",
-  "params": []
+  "method": "new_chat",
+  "params": ["Some topic", "f"]
 }
 
 ###

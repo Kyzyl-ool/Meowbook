@@ -10,3 +10,8 @@ message = 'Hello world'
 def send_report():
     # filename = generate_report()
     send_mail(subject, sender, [recipient], 'Hello world', '<body>Hello</body>')
+
+@celery.task()
+def run_main_task(text):
+    print(text)
+
