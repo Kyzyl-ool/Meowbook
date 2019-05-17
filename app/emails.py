@@ -10,4 +10,3 @@ def send_mail(subject, sender, recipients, text_body, html_body):
 	with app.app_context():
 		print(subject, sender, recipients, text_body, html_body)
 		mail.send(msg)
-
